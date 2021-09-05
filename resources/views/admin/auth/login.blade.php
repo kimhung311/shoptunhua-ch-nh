@@ -12,8 +12,9 @@
             body{
             margin:0;
             color:#6a6f8c;
-            /* background:#c8c8c8; */
             background-image: url('https://3.bp.blogspot.com/-RfrtBCqOYNQ/WjpTfxsju2I/AAAAAAAAtUw/uitlBiCcG9A8--RFWcI9X0FalfRLyoUaQCLcBGAs/s1600/hinh-nen-cuc-dep-cho-may-tinh.jpg');
+            background-size: 100%;
+            background-attachment: fixed; 
             font:600 16px/18px 'Open Sans',sans-serif;
             }
             *,:after,:before{box-sizing:border-box}

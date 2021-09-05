@@ -100,9 +100,19 @@
                             </div>
                             <button type="submit"  class=" amado-btn">Add to cart</button>
                         </form>
-
                     </div>
                 </div>
+                <form action="{{ route('product.review') }}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <h5 >Bình luận sản phẩm:</h5><br>
+                    <input type="hidden" name="product_id" value="$product->id">
+                    <textarea name="comment"  cols="30" rows="5" class="form-control"></textarea><br>
+                    <input type="file" name="image" value="Chọn hình ảnh"><br>
+                    <button type="submit" id="" class="btn btn-primary"  role="button">Gửi</button>
+                </form>
+                {{-- @foreach ($review as #comment)
+                    
+                @endforeach --}}
             </div>
         </div>
     </div>
@@ -119,7 +129,6 @@
             elem.textContent   = 'Username should only contain lowercase letters e.g. john';
             elem.className     = 'error';
             elem.style.display = 'block';
-
             input.className    = 'invalid animated shake';
         }
     });

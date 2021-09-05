@@ -35,14 +35,14 @@ Route::group(['prefix' => 'home', 'as' => 'home.'], function () {
     });
 Route::group(['prefix' => 'product', 'as' => 'product.'], function () {
     Route::get('/detail/{id}', [ProductController::class, 'detail'])->name('detail');
-    // Route::post('/review', [ProductController::class, 'review'])->name('review');
+    Route::post('/review', [ProductController::class, 'review'])->name('review');
     // Route::get('/delete-comment/{id}', [ProductController::class, 'deleteComment'])->name('delete-comment');
     Route::get('/search', [ProductController::class, 'searchProduct'])->name('search'); 
-    Route::get('/category/{id}', [ProductController::class, 'getProductByCategory'])->name('category'); 
-        
+    Route::get('/category/{id}', [ProductController::class, 'getProductByCategory'])->name('category');
     });
 Route::group(['prefix' => 'cart', 'as' => 'cart.'], function () {
         Route::post('/addcart/{id}', [CartController::class,'AddCart'])->name('addcart');
         Route::get('/', [CartController::class,'getcart'])->name('cart-info');
         Route::get('checkout',[CartController::class,'checkout_bill'])->name('checkout');
 });
+

@@ -21,7 +21,6 @@ class HomeController extends Controller
         return view('Homepage.home')->with([
             'products'       => $products,
             'categories'     => $categories,
-
         ]);    
     }
     public function shop(Request $request, $id)
@@ -40,8 +39,6 @@ class HomeController extends Controller
         return view('Homepage.shopcategory')->with([
             'products'      => $products,
             'categories'    => $categories,
-
         ]);
     }
-  
 }

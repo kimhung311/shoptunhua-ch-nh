@@ -21,7 +21,6 @@ class CreateReviewProductsTable extends Migration
             $table->integer('image_review');
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
-            
             $table->softDeletes();
             $table->timestamps();
         });

@@ -16,7 +16,6 @@
 @endpush
 
 <div class="old">
-    
   <!-- Search Wrapper Area Start -->
   <div class="search-wrapper section-padding-100">
     <div class="search-close">
@@ -60,7 +59,7 @@
         <!-- ##### Single Widget ##### -->
         <div class="widget catagory mb-50">
             <div class="cart-fav-search mb-100" >
-                <a   href="#" class="search-nav btn btn-warning"><img src="{{asset('shop/img/core-img/search.png')}}" alt=""> Search</a>
+                <a href="#" class="search-nav btn btn-warning"><img src="{{asset('shop/img/core-img/search.png')}}" alt=""> Search</a>
             </div>
             <!-- Widget Title -->
             <h6 class="widget-title mb-30">Catagories</h6>
@@ -69,7 +68,7 @@
             <div class="catagories-menu">
                 @foreach ($categories as $item)
                 <ul>
-                    <li class="active"><a href="{{ route('home.shop',$item->id) }}">{{ $item->name }}</a></li>
+                    <li class="active"><a style="font-size:20px" href="{{ route('home.shop',$item->id) }}">{{ $item->name }}</a></li>
     
                     {{-- <li><a href="#">Beds</a></li>
                     <li><a href="#">Accesories</a></li>
@@ -115,25 +114,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- ##### Single Widget ##### -->
-        {{-- <div class="widget color mb-50">
-            <!-- Widget Title -->
-            <h6 class="widget-title mb-30">Color</h6>
-
-            <div class="widget-desc">
-                <ul class="d-flex">
-                    <li><a href="#" class="color1"></a></li>
-                    <li><a href="#" class="color2"></a></li>
-                    <li><a href="#" class="color3"></a></li>
-                    <li><a href="#" class="color4"></a></li>
-                    <li><a href="#" class="color5"></a></li>
-                    <li><a href="#" class="color6"></a></li>
-                    <li><a href="#" class="color7"></a></li>
-                    <li><a href="#" class="color8"></a></li>
-                </ul>
-            </div>
-        </div> --}}
 
         <!-- ##### Single Widget ##### -->
         <div class="widget price mb-50">
@@ -230,13 +210,12 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                             </div>
                                             <div class="cart">
-                                                <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart"><i class="fal fa-shopping-cart"></i></a>
+                                                <a class="btn btn-warning"href="{{ route('cart.cart-info',$item->id) }}" data-toggle="tooltip" data-placement="left" title="Add to Cart"><b>ADD TO Cart</b></a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                     @endforeach
                 @endif
             </div>
