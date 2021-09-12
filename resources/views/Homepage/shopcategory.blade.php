@@ -229,8 +229,12 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                             </div>
                                             <div class="cart">
-                                                <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="{{ asset('shop/img/core-img/cart.png') }}" alt=""></a>
+                                                <form action="{{route('cart.cart-info',$item->id)}}" method="post">
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-warning"><img src="{{ asset('shop/img/core-img/cart.png') }}" alt=""></button>
+                                                </form>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>

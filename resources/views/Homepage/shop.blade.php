@@ -69,13 +69,6 @@
                 @foreach ($categories as $item)
                 <ul>
                     <li class="active"><a style="font-size:20px" href="{{ route('home.shop',$item->id) }}">{{ $item->name }}</a></li>
-    
-                    {{-- <li><a href="#">Beds</a></li>
-                    <li><a href="#">Accesories</a></li>
-                    <li><a href="#">Furniture</a></li>
-                    <li><a href="#">Home Deco</a></li>
-                    <li><a href="#">Dressings</a></li>
-                    <li><a href="#">Tables</a></li> --}}
                 </ul>
                 @endforeach
             </div>
@@ -176,7 +169,7 @@
             </div>
 
             <div class="row">
-                @if($products)
+                {{-- @if($products) --}}
                     @foreach ($products as $item)
                             <!-- Single Product Area -->
                             <div class="col-12 col-sm-6 col-md-12 col-xl-6">
@@ -184,12 +177,10 @@
                                     <!-- Product Image -->
                                     <div class="product-img">
                                         <img src="{{ asset($item->image) }}" alt="">
-                                        <!-- Hover Thumb -->
-                                    
-                                        {{-- <img class="hover-img" src="{{ asset($item->product_images->url) }}" alt=""> --}}
-                                            
+                                        <!-- Hover Thumb --> 
+                                        {{-- @include('Homepage.img-hover') --}}
+                                       {{-- <img class="hover-img" src="{{  $url->url }}" alt=""> --}}
                                     </div>
-
                                     <!-- Product Description -->
                                     <div class="product-description d-flex align-items-center justify-content-between">
                                         <!-- Product Meta Data -->
@@ -209,15 +200,16 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                             </div>
-                                            <div class="cart">
-                                                <a class="btn btn-warning"href="{{ route('cart.cart-info',$item->id) }}" data-toggle="tooltip" data-placement="left" title="Add to Cart"><b>ADD TO Cart</b></a>
-                                            </div>
+                                            
+                                            {{-- <div class="cart">
+                                                <a class="btn btn-warning"href="{{ route('cart.cart-info',  $item->id) }}" data-toggle="tooltip" data-placement="left" title="Add to Cart"><b>ADD TO Cart</b></a>
+                                            </div> --}}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                     @endforeach
-                @endif
+                {{-- @endif --}}
             </div>
 
             <div class="row">

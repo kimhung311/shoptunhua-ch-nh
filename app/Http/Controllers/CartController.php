@@ -39,7 +39,7 @@ class CartController extends Controller
             $qty = $product->quantity - $carts[$id]['quantity'];
             $product->quantity = $qty;
             // dd($qty);
-            dd($carts[$id]);
+            // dd($carts[$id]);
 
         }
         

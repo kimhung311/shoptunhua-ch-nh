@@ -17,7 +17,7 @@ class HomeController extends Controller
     public function index()
     {
         $categories = Category::get();
-        $products = Product::with([ 'category'])->get();
+        $products   = Product::with([ 'category'])->get();
         return view('Homepage.home')->with([
             'products'       => $products,
             'categories'     => $categories,
@@ -25,8 +25,8 @@ class HomeController extends Controller
     }
     public function shop(Request $request, $id)
     {
-        $categories = Category::all();
-        $products = Product::where('category_id',$id)->paginate(8);
+        $categories         = Category::all();
+        $products           = Product::with('product_images')->paginate(8);
         return view('Homepage.shop')->with([
             'products'      => $products,
             'categories'    => $categories,
