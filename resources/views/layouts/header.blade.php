@@ -73,7 +73,7 @@
                 <li class="active"><a href="{{ route('index') }}">Home</a></li>
                 <li><a href="{{ route('home.shopcategory',0) }}">Shop</a></li>
                 <li><a href="product-details.html">Product</a></li>
-                <li><a href="cart.html">Cart</a></li>
+                <li><a href="{{ route('cart.cart-info') }}">Cart</a></li>
                 <li><a href="checkout.html">Checkout</a></li>
             </ul>
         </nav>
@@ -84,7 +84,7 @@
         </div>
         <!-- Cart Menu -->
         <div class="cart-fav-search mb-100">
-            <a href="cart.html" class="cart-nav"><img src="{{asset('shop/img/core-img/cart.png')}}" alt=""> Cart <span>(0)</span></a>
+            <a href="{{ route('cart.cart-info') }}" class="cart-nav"><img src="{{asset('shop/img/core-img/cart.png')}}" alt=""> Cart <span>(0)</span></a>
             <a href="#" class="fav-nav"><img src="{{asset('shop/img/core-img/favorites.png')}}" alt=""> Favourite</a>
             <a href="#" class="search-nav"><img src="{{asset('shop/img/core-img/search.png')}}" alt=""> Search</a>
         </div>

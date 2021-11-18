@@ -52,7 +52,7 @@ Route::group(['middleware' => ['check_login_admin'] , 'as' => 'admin.'], functio
         // Route::get('/show/{id}', [CustomerController::class, 'show'])->name('show');
         // Route::get('/edit/{id}', [CustomerController::class, 'edit'])->name('edit');
         // Route::put('/update/{id}', [CustomerController::class, 'update'])->name('update');
-        
+        Route::get('/search', [CustomerController::class, 'searchcustommer'])->name('search'); 
         Route::delete('/delete/{id}', [CustomerController::class, 'destroy'])->name('destroy');
     });
 
@@ -64,6 +64,7 @@ Route::group(['middleware' => ['check_login_admin'] , 'as' => 'admin.'], functio
         Route::get('/edit/{id}', [UserController::class, 'edit'])->name('edit');
         Route::put('/update/{id}', [UserController::class, 'update'])->name('update');
         Route::delete('/delete/{id}', [UserController::class, 'destroy'])->name('destroy');
+
 
     });
 
