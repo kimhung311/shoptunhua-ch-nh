@@ -167,23 +167,27 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        // Method: DELETE
-        DB::beginTransaction();
+    // public function destroy($id){
+        
+    //     // $category = Category::find($id);
 
-        try {
-            $category = Category::find($id);
-            $category->delete();
+    //     // check xem category ID nay co ton tai trong table products
+    //     $category = Category::find($id)
+    //     ->whereHas('products', function (Builder $query) use ($id) {
+    //         $query->where('category_id', $id);
+    //     })->first();
 
-            DB::commit();
+    //     dd($category);
+    //     if(!empty($category) && sizeof($category) > 0){
+    //         dd($category->products);
 
-            return redirect()->route('admin.category.index')
-                ->with('success', 'Delete Category successful!');
-        }  catch (\Exception $ex) {
-            DB::rollBack();
-            // have error so will show error message
-            return redirect()->back()->with('error', $ex->getMessage());
-        }
-    }
+    //         return redirect()->route('admin.category.index')
+    //           ->with('error', 'Delete Category error!');
+    //     }else{
+    //         $category->delete();
+    //         return redirect()->route('admin.category.index')
+    //           ->with('success', 'Delete Category successful!');
+    //     }
+    // }
 }
+

@@ -71,6 +71,13 @@ class CartController extends Controller
                 // dd($data);
                 return view('cart.cart', $data);
     }
+    public function delete($id, Request $request){
+            $id = $request -> id;
+            $session = Session::all();
+            if($cart['id'] = $id){
+                
+            }
+    }
     /**
      * Store a newly created resource in storage.
      *

@@ -43,7 +43,7 @@ class ProductController extends Controller
     public function review(Request $request){
         try {
             if(!auth()->user()){
-                return redirect()->route('auth.login')->with('message', 'Vui lòng đăng nhập để đánh giá sản phẩm');
+                return redirect()->route('login')->with('message', 'Vui lòng đăng nhập để đánh giá sản phẩm');
             }
             $user = auth()->user();
                 $data = [
